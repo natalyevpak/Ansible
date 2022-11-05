@@ -1,0 +1,15 @@
+[app]
+130.193.49.44 ansible_user=evna #vm2
+158.160.37.117 ansible_user=evna #vm3
+
+[database]
+localhost ansible_connection=local
+
+[database:vars]
+postgresql_version=12
+postgresql_bin_path=/usr/lib/postgresql/{{ postgresql_version }}/bin
+postgresql_data_dir=/var/lib/postgresql/{{ postgresql_version }}/main
+ansible_ssh_pipelining=true
+
+[web]
+localhost ansible_connection=local #vm1
